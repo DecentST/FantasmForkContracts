@@ -36,7 +36,7 @@ const config: HardhatUserConfig = {
     fantom: {
       url: 'https://rpc.ftm.tools/',
       chainId: 250,
-      accounts: accounts('fantom'),
+      accounts: ['aaaa'],
     },
     avax: {
       url: 'https://api.avax.network/ext/bc/C/rpc',
@@ -44,16 +44,17 @@ const config: HardhatUserConfig = {
       accounts: accounts('avax'),
     },
   },
+  
   gasReporter: {
     currency: 'USD',
     gasPrice: 5,
     enabled: !!process.env.REPORT_GAS,
   },
   etherscan: {
-    apiKey: etherscanApiKey(),
+    apiKey: 'aaaaaa'
   },
   namedAccounts: {
-    deployer: 0
+    deployer: '0xA9964a4a3fc91B735ED7d7f5e4Ff8c9913B71dBF'
   },
 };
 

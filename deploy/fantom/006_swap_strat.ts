@@ -16,7 +16,7 @@ const func: DeployFunction = async ({deployments, getNamedAccounts, wellknown}) 
 
   const fsm = await get('FSM');
   const treasury = await get('FantasticTreasury');
-  const wethUtils = await get('WethUtils');
+  //const wethUtils = await get('WethUtils');
 
   const swapSlippage = 20000; // 2%
   const swapPaths = [weth.address, fsm.address];
@@ -28,11 +28,10 @@ const func: DeployFunction = async ({deployments, getNamedAccounts, wellknown}) 
       lp_fsm_eth.address,
       treasury.address,
       swapRouter.address,
-      swapSlippage,
       swapPaths,
     ],
     libraries: {
-      WethUtils: wethUtils.address,
+      WethUtils: "0xb3ed3C150846F7363509d2A1A2B77a2a00DC8094", //wethUtils.address,
     },
   });
 

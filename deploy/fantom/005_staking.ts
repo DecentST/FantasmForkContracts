@@ -16,14 +16,14 @@ const func: DeployFunction = async ({deployments, getNamedAccounts, wellknown}) 
   const farm = await get('FantasticChef');
   const fsm = await get('FSM');
   const reserve = await get('FsmReserve');
-  const wethUtils = await get('WethUtils');
+  //const wethUtils = await get('WethUtils');
 
   const staking = await deploy('FantasticStaking', {
     from: deployer,
     log: true,
     args: [fsm.address, reserve.address, [farm.address]],
     libraries: {
-      WethUtils: wethUtils.address,
+      WethUtils: "0xb3ed3C150846F7363509d2A1A2B77a2a00DC8094", //wethUtils.address,
     },
   });
 

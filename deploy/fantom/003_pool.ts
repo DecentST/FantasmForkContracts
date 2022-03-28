@@ -13,14 +13,14 @@ const func: DeployFunction = async ({deployments, getNamedAccounts, wellknown}) 
   const reserve = await get('FsmReserve');
   const xftm = await get('XFTM');
   const fsm = await get('FSM');
-  const wethUtils = await get('WethUtils');
+  //const wethUtils = await get('WethUtils');
 
   await deploy('Pool', {
     from: deployer,
     log: true,
     args: [xftm.address, fsm.address, reserve.address],
     libraries: {
-      WethUtils: wethUtils.address,
+      WethUtils: "0xb3ed3C150846F7363509d2A1A2B77a2a00DC8094",//wethUtils.address,
     },
   });
 
